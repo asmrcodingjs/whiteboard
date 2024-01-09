@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins;
+  background: #f9f9f98f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#whiteboard {
+  width: 900px;
+  height: 80%;
+  border: 3px dashed #90a4ae;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.controls__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.controls__item.active {
+  border: 5px solid green;
+}
+
+#customColorInput {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#customColorInput::-webkit-color-swatch {
+  border-radius: 50%;
+}
+
+.controls .controls__item,
+#customColorInput {
+  transition: transform 0.3s ease, box-shadow 0.3 ease;
+}
+
+.controls .controls__item:hover,
+#customColorInput:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-btn {
+  font-size: 20px;
+  background: #f0d2d279;
+  color: #4b4b4b;
+  border: none;
+  margin: 0 5px;
+  transition: background ease 0.3s;
+}
+
+.action-btn:hover {
+  background: #f0d2d2bb;
+}
+
+#bg {
+  position: absolute;
+  z-index: -1;
+  width: 80%;
+  height: 80%;
+  /* background: black;  */
+  border-radius: 100%;
+  filter: blur(400px);
+  transition: background 0.5s, filter 0.5s;
+  animation-name: WidthAnimation;
+  animation-duration: 1s;
+  animation-delay: 10ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes WidthAnimation {
+  0%,
+  100% {
+    width: 75%;
+  }
+
+  50% {
+    width: 60%;
+  }
+}
